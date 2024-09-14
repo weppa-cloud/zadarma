@@ -13,6 +13,36 @@
     <!-- <input type="text" id="search" placeholder="Buscar..." onkeyup="filterProducts()"> -->
     <div id="resumen" class="card-container"></div> <!-- Div para mostrar el resumen -->
 
+
+    
+    <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-lib.js?sub_v=1"></script>
+    <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-fn.js?sub_v=1"></script>
+    <script>
+        if (window.addEventListener) {
+            window.addEventListener('load', function() {
+                zadarmaWidgetFn(
+                    'ea0ff7c43545f6d0d97a', 
+                    '89075', 
+                    'square', /*square|rounded*/ 
+                    'es', /*ru, en, es, fr, de, pl, ua*/
+                    true, 
+                    {right:'10px',bottom:'5px'}
+                );
+            }, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('onload', function(){
+                zadarmaWidgetFn(
+                    'YOUR_KEY', 
+                    'YOUR_SIP', 
+                    'square', /*square|rounded*/
+                    'es', /*ru, en, es, fr, de, pl, ua*/
+                    true, 
+                    {right:'10px',bottom:'5px'}
+                );
+            });
+        }
+    </script>
+
     <script src="/js/scripts.js"></script>
 </body>
 </html>
