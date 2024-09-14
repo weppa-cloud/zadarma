@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  productos:
+  zadarma:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8084:80"
+      - "8085:80"
     networks:
       - webnet
 
