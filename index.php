@@ -37,7 +37,7 @@ if ($response === FALSE) {
             window.addEventListener('load', function() {
                 zadarmaWidgetFn(
                     'ea0ff7c43545f6d0d97a', 
-                    '112571-102', 
+                    '89075', 
                     'square', 
                     'es', 
                     true, 
@@ -48,7 +48,7 @@ if ($response === FALSE) {
             window.attachEvent('onload', function() {
                 zadarmaWidgetFn(
                     'ea0ff7c43545f6d0d97a', 
-                    '112571-102', 
+                    '89075', 
                     'square', 
                     'es', 
                     true, 
