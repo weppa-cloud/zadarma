@@ -8,6 +8,9 @@ if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
 <head>
     <meta charset="UTF-8">
     <title>Zadarma con PHP</title>
+</head>
+<body>
+    <h1><?php echo "Zadarma - PHP"; ?></h1>
 
     <!-- Agrega aquí los scripts de Zadarma -->
     <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-lib.js?sub_v=1"></script>
@@ -37,10 +40,6 @@ if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
             });
         }
     </script>
-</head>
-<body>
-    <h1><?php echo "Hola desde PHP"; ?></h1>
-
     <!-- El resto de tu HTML y JavaScript -->
     <script src="/js/scripts.js"></script>
 </body>
