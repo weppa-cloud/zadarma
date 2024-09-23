@@ -1,4 +1,5 @@
 <?php
+/*
 // Si el parámetro 'zd_echo' está presente en la URL, el script termina y devuelve el valor del parámetro
 if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
 
@@ -14,6 +15,44 @@ if ($response === FALSE) {
     // Procesar la respuesta (ej. si es JSON)
     $apiData = json_decode($response, true);
 }
+*/
+
+// Datos para la autenticación en la API de Zadarma
+$api_key = 'ea0ff7c43545f6d0d97a';
+$api_secret = 'c3e2b41f79d425afae4e';
+$url = "https://api.zadarma.com/v1/webrtc/get_key";
+
+// Generar una firma para la autenticación
+$method = 'GET';
+$date = gmdate('D, d M Y H:i:s \G\M\T');
+$string_to_sign = $method . "\n\n\n" . $date . "\n/v1/webrtc/get_key";
+$signature = base64_encode(hash_hmac('sha1', $string_to_sign, $api_secret, true));
+
+// Configurar los encabezados para la solicitud
+$headers = [
+    "Authorization: ZD $api_key:$signature",
+    "Date: $date"
+];
+
+// Inicializar cURL para hacer la petición GET
+$ch = curl_init($url);
+
+// Configurar cURL
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+// Ejecutar la petición
+$response = curl_exec($ch);
+
+// Verificar si ocurrió un error
+if ($response === false) {
+    $apiData = "Error: " . curl_error($ch);
+} else {
+    $apiData = json_decode($response, true);
+}
+
+// Cerrar cURL
+curl_close($ch);
 ?>
 
 <!DOCTYPE html>
