@@ -1,21 +1,5 @@
 <?php
-/*
-// Si el parámetro 'zd_echo' está presente en la URL, el script termina y devuelve el valor del parámetro
 if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
-
-
-// Hacer una petición GET a un endpoint
-$url = "https://api.zadarma.com/v1/webrtc/get_key"; // Reemplaza con el URL del endpoint
-$response = file_get_contents($url);
-
-// Verificar si la respuesta es válida
-if ($response === FALSE) {
-    $apiData = "Error al realizar la petición.";
-} else {
-    // Procesar la respuesta (ej. si es JSON)
-    $apiData = json_decode($response, true);
-}
-*/
 
 // Datos para la autenticación en la API de Zadarma
 $api_key = 'c69ec05795c4e3a004ae';
@@ -53,7 +37,11 @@ if ($response === false) {
 
 // Cerrar cURL
 curl_close($ch);
+
+// Codificar los datos como JSON
+echo json_encode($apiData);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -66,16 +54,41 @@ curl_close($ch);
 
     <!-- Mostrar la respuesta de la API -->
     <h2>Datos de la API:</h2>
-    <pre><?php print_r($apiData); ?></pre>
+    <pre id="api-response"></pre>
 
     <!-- Agrega aquí los scripts de Zadarma -->
     <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-lib.js?sub_v=1"></script>
     <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-fn.js?sub_v=1"></script>
     <script>
+        // Realizar la petición al script PHP para obtener la respuesta de la API
+        fetch('index.php')
+            .then(response => {
+                // Intentar convertir la respuesta a JSON
+                return response.text().then(text => {
+                    try {
+                        // Intentar parsear el texto a JSON
+                        const jsonData = JSON.parse(text);
+                        return jsonData;
+                    } catch (error) {
+                        // Si no es JSON, devolver el texto original
+                        return text;
+                    }
+                });
+            })
+            .then(data => {
+                console.log('Respuesta de la API:', data);  // Mostrar en consola
+
+                // Mostrar el resultado en el HTML
+                const displayData = typeof data === 'object' ? JSON.stringify(data, null, 2) : data;
+                document.getElementById('api-response').innerText = displayData;
+            })
+            .catch(error => console.error('Error en la petición:', error));
+
+        // Inicializar el widget de Zadarma
         if (window.addEventListener) {
             window.addEventListener('load', function() {
                 zadarmaWidgetFn(
-                    'ea0ff7c43545f6d0d97a', 
+                    'c69ec05795c4e3a004ae', 
                     '89075', 
                     'square', 
                     'es', 
@@ -86,7 +99,7 @@ curl_close($ch);
         } else if (window.attachEvent) {
             window.attachEvent('onload', function() {
                 zadarmaWidgetFn(
-                    'ea0ff7c43545f6d0d97a', 
+                    'c69ec05795c4e3a004ae', 
                     '89075', 
                     'square', 
                     'es', 
@@ -96,8 +109,5 @@ curl_close($ch);
             });
         }
     </script>
-    <!-- El resto de tu HTML y JavaScript -->
-    <script src="/js/scripts.js"></script>
 </body>
 </html>
-
