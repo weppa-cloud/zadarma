@@ -1,24 +1,21 @@
-// scripts/phone-widget.js
-if (window.addEventListener) {
-    window.addEventListener('load', function() {
-        zadarmaWidgetFn(
-            'c69ec05795c4e3a004ae', 
-            '89075', 
-            'square', 
-            'es', 
-            true, 
-            {right: '10px', bottom: '5px'}
-        );
-    }, false);
-} else if (window.attachEvent) {
-    window.attachEvent('onload', function() {
-        zadarmaWidgetFn(
-            'c69ec05795c4e3a004ae', 
-            '89075', 
-            'square', 
-            'es', 
-            true, 
-            {right: '10px', bottom: '5px'}
-        );
-    });
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Realiza una solicitud para obtener la clave WebRTC desde el servidor
+    fetch('/api/zadarma.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.key) {
+                // Inicializar el widget de Zadarma con la clave obtenida
+                zadarmaWidgetFn(
+                    data.key,               // YOUR_KEY: la clave generada por la API
+                    '89075',             // YOUR_SIP: el número SIP o extensión
+                    'square',               // Diseño del widget
+                    'es',                   // Idioma del widget
+                    true,                   // Activar el modo silencioso
+                    {right: '10px', bottom: '5px'}  // Posición del widget
+                );
+            } else {
+                console.error('Error al obtener la clave WebRTC:', data);
+            }
+        })
+        .catch(error => console.error('Error en la solicitud:', error));
+});
