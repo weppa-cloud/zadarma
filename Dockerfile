@@ -10,5 +10,7 @@ EXPOSE 80
 # Habilitar módulos PHP adicionales si es necesario
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
+RUN chown -R www-data:www-data /var/www/html/
+
 # Configura el comando de inicio para Apache
 CMD ["apache2-foreground"]
