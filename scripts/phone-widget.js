@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Inicializar el widget de Zadarma con la clave obtenida
                     zadarmaWidgetFn(
                         data.key,               // YOUR_KEY: la clave generada por la API
-                        'YOUR_SIP',             // YOUR_SIP: el número SIP o extensión
+                        '89075',             // YOUR_SIP: el número SIP o extensión
                         'square',               // Diseño del widget
                         'es',                   // Idioma del widget
                         true,                   // Activar el modo silencioso
