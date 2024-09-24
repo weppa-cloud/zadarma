@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Realiza una solicitud para obtener la clave WebRTC desde el servidor
     fetch('/api/zadarma.php')
-        .then(response => response.json())
+        .then(response => response.json())  // Parsear la respuesta como JSON
         .then(data => {
             if (data.key) {
                 // Inicializar el widget de Zadarma con la clave obtenida
