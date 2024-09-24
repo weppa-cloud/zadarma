@@ -18,8 +18,8 @@ if ($response === FALSE) {
 */
 
 // Datos para la autenticación en la API de Zadarma
-$api_key = 'ea0ff7c43545f6d0d97a';
-$api_secret = 'c3e2b41f79d425afae4e';
+$api_key = 'c69ec05795c4e3a004ae';
+$api_secret = '88f8485fb929f1191459';
 $url = "https://api.zadarma.com/v1/webrtc/get_key";
 
 // Generar una firma para la autenticación
