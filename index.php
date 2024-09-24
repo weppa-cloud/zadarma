@@ -19,11 +19,11 @@ if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
     <script>
         if (window.addEventListener) { 
             window.addEventListener('load', function() { 
-            zadarmaWidgetFn('c69ec05795c4e3a004ae', '89075', 'square' /*square|rounded*/, 'en' /*ru, en, es, fr, de, pl, ua*/, true, "{right:'10px',bottom:'5px'}"); 
+            zadarmaWidgetFn('c69ec05795c4e3a004ae', '576063111663', 'square' /*square|rounded*/, 'en' /*ru, en, es, fr, de, pl, ua*/, true, "{right:'10px',bottom:'5px'}"); 
             }, false); 
         } else if (window.attachEvent) { 
             window.attachEvent('onload', function(){ 
-            zadarmaWidgetFn('c69ec05795c4e3a004ae', '89075', 'square' /*square|rounded*/, 'en' /*ru, en, es, fr, de, pl, ua*/, true, "{right:'10px',bottom:'5px'}"); 
+            zadarmaWidgetFn('c69ec05795c4e3a004ae', '576063111663', 'square' /*square|rounded*/, 'en' /*ru, en, es, fr, de, pl, ua*/, true, "{right:'10px',bottom:'5px'}"); 
             }); 
         } 
 </script>
