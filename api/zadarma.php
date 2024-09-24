@@ -2,7 +2,7 @@
 // Incluir la configuración de Zadarma
 $config = include '../config/config.php';
 
-// URL de la API de Zadarma para obtener la clave WebRTC
+// Generar una clave para WebRTC usando la API de Zadarma
 $url = "https://api.zadarma.com/v1/webrtc/get_key";
 
 // Generar la firma para la autenticación
@@ -25,18 +25,17 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 // Ejecutar la petición y obtener la respuesta
 $response = curl_exec($ch);
 
-echo "Respuesta API: ";
-var_dump($response); 
-
 // Verificar si ocurrió un error
 if ($response === false) {
     echo json_encode(["status" => "error", "message" => "Error: " . curl_error($ch)]);
 } else {
     $apiData = json_decode($response, true);
-    if (isset($apiData['key'])) {
-        echo json_encode($apiData);  // Devolver la clave WebRTC
+    
+    // Verificar si el JSON de respuesta es correcto
+    if (json_last_error() === JSON_ERROR_NONE) {
+        echo json_encode($apiData);
     } else {
-        echo json_encode(["status" => "error", "message" => $apiData['message'] ?? 'No autorizado']);
+        echo json_encode(["status" => "error", "message" => "Error en el JSON de la API de Zadarma"]);
     }
 }
 
