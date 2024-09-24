@@ -6,9 +6,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8085:80"
-    # networks:
-    #   - webnet
+    networks:
+      - webnet
 
-# networks:
-#   webnet:
-#     external: true
+networks:
+  webnet:
+    external: true
