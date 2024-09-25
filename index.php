@@ -52,8 +52,8 @@ var_dump($webrtcKey)
         if (window.addEventListener) {
             window.addEventListener('load', function() {
                 zadarmaWidgetFn(
-                    'd1c5238d767471ddb64b', 
-                    '112571-100', 
+                    '657b49efd31063414bafaa9c02a48f0c679d72e505d786032f9425151ba74d1facea6d29662a67317c2758930aff73030e5e3d9952187f671250e1ffb7763f6b', 
+                    '89075', 
                     'square', /*square|rounded*/ 
                     'es', /*ru, en, es, fr, de, pl, ua*/
                     true, 
@@ -63,8 +63,8 @@ var_dump($webrtcKey)
         } else if (window.attachEvent) {
             window.attachEvent('onload', function(){
                 zadarmaWidgetFn(
-                    'd1c5238d767471ddb64b', 
-                    '112571-100', 
+                    '657b49efd31063414bafaa9c02a48f0c679d72e505d786032f9425151ba74d1facea6d29662a67317c2758930aff73030e5e3d9952187f671250e1ffb7763f6b', 
+                    '89075', 
                     'square', /*square|rounded*/
                     'es', /*ru, en, es, fr, de, pl, ua*/
                     true, 
