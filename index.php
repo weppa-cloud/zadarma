@@ -42,17 +42,30 @@ var_dump($pbxInternal);
     <!-- Cargar el widget de Zadarma -->
     <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-lib.js?sub_v=1"></script>
     <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-fn.js?sub_v=1"></script>
-    <!-- <script src="/scripts/phone-widget.js"></script>  Inicializar el widget con la clave WebRTC -->
     <script>
-        if (window.addEventListener) { 
-            window.addEventListener('load', function() { 
-            zadarmaWidgetFn('d1c5238d767471ddb64b', '89075', 'square' /*square|rounded*/, 'en' /*ru, en, es, fr, de, pl, ua*/, true, "{right:'10px',bottom:'5px'}"); 
-            }, false); 
-        } else if (window.attachEvent) { 
-            window.attachEvent('onload', function(){ 
-            zadarmaWidgetFn('d1c5238d767471ddb64b', '89075', 'square' /*square|rounded*/, 'en' /*ru, en, es, fr, de, pl, ua*/, true, "{right:'10px',bottom:'5px'}"); 
-            }); 
-        } 
-</script>
+        if (window.addEventListener) {
+            window.addEventListener('load', function() {
+                zadarmaWidgetFn(
+                    'd1c5238d767471ddb64b', 
+                    '112571', 
+                    'square', /*square|rounded*/ 
+                    'es', /*ru, en, es, fr, de, pl, ua*/
+                    true, 
+                    {right:'10px',bottom:'5px'}
+                );
+            }, false);
+        } else if (window.attachEvent) {
+            window.attachEvent('onload', function(){
+                zadarmaWidgetFn(
+                    'd1c5238d767471ddb64b', 
+                    '112571', 
+                    'square', /*square|rounded*/
+                    'es', /*ru, en, es, fr, de, pl, ua*/
+                    true, 
+                    {right:'10px',bottom:'5px'}
+                );
+            });
+        }
+    </script>
 </body>
 </html>
