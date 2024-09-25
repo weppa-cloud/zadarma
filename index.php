@@ -26,6 +26,11 @@ $balance = $api->getBalance();
 
 echo "Despues de balance"; 
 var_dump($pbxInternal);
+
+$login = '89075';
+
+echo "Sigue el webRtcKey ";
+$webrtcKey = $api->getWebrtcKey($login)->key;
 ?> 
 
 
