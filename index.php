@@ -31,6 +31,7 @@ $login = '112571-100';
 
 echo "Sigue el webRtcKey ";
 $webrtcKey = $api->getWebrtcKey($login)->key;
+var_dump($webrtcKey)
 ?> 
 
 
