@@ -1,11 +1,5 @@
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/zadarma/user-api-v1"
-        }
-    ],
     "require": {
-        "zadarma/api": "^1.0"
+        "zadarma/zadarma-api-v1": "^1.0"
     }
 }

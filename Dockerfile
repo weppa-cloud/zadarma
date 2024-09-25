@@ -10,9 +10,11 @@ COPY . /var/www/html/
 # Instala las extensiones PHP necesarias
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Corre composer install para instalar dependencias
+# Establece el directorio de trabajo para Composer
 WORKDIR /var/www/html
-# RUN composer install
+
+# Corre composer install para instalar dependencias
+RUN composer install
 
 # Cambia los permisos de la carpeta
 RUN chown -R www-data:www-data /var/www/html/
