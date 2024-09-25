@@ -47,7 +47,7 @@ var_dump($pbxInternal);
             window.addEventListener('load', function() {
                 zadarmaWidgetFn(
                     'd1c5238d767471ddb64b', 
-                    '112571', 
+                    '89075', 
                     'square', /*square|rounded*/ 
                     'es', /*ru, en, es, fr, de, pl, ua*/
                     true, 
@@ -58,7 +58,7 @@ var_dump($pbxInternal);
             window.attachEvent('onload', function(){
                 zadarmaWidgetFn(
                     'd1c5238d767471ddb64b', 
-                    '112571', 
+                    '89075', 
                     'square', /*square|rounded*/
                     'es', /*ru, en, es, fr, de, pl, ua*/
                     true, 
