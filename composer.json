@@ -1,0 +1,5 @@
+{
+    "require": {
+        "zadarma/api": "^1.0"
+    }
+}
