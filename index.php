@@ -27,7 +27,7 @@ $balance = $api->getBalance();
 echo "Despues de balance"; 
 var_dump($pbxInternal);
 
-$login = '112571-100';
+$login = '89075';
 
 echo "Sigue el webRtcKey ";
 $webrtcKey = $api->getWebrtcKey($login)->key;
@@ -49,10 +49,11 @@ var_dump($webrtcKey)
     <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-lib.js?sub_v=1"></script>
     <script src="https://my.zadarma.com/webphoneWebRTCWidget/v9/js/loader-phone-fn.js?sub_v=1"></script>
     <script>
+        const webrtcKey = '<?= $webrtcKey ?>';
         if (window.addEventListener) {
             window.addEventListener('load', function() {
                 zadarmaWidgetFn(
-                    '657b49efd31063414bafaa9c02a48f0c679d72e505d786032f9425151ba74d1facea6d29662a67317c2758930aff73030e5e3d9952187f671250e1ffb7763f6b', 
+                    webrtcKey, 
                     '89075', 
                     'square', /*square|rounded*/ 
                     'es', /*ru, en, es, fr, de, pl, ua*/
@@ -63,7 +64,7 @@ var_dump($webrtcKey)
         } else if (window.attachEvent) {
             window.attachEvent('onload', function(){
                 zadarmaWidgetFn(
-                    '657b49efd31063414bafaa9c02a48f0c679d72e505d786032f9425151ba74d1facea6d29662a67317c2758930aff73030e5e3d9952187f671250e1ffb7763f6b', 
+                    webrtcKey, 
                     '89075', 
                     'square', /*square|rounded*/
                     'es', /*ru, en, es, fr, de, pl, ua*/
