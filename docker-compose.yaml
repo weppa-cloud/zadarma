@@ -1,4 +1,3 @@
-
 services:
   zadarma:
     build:
@@ -8,6 +7,8 @@ services:
       - "8085:80"
     networks:
       - webnet
+    volumes:
+      - .:/var/www/html  # Para mapear tu código local al contenedor
 
 networks:
   webnet:
