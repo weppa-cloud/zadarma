@@ -1,7 +1,31 @@
 <?php
 // Este archivo puede permanecer como está
-if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
-?>
+// if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
+
+
+ 
+use Zadarma_API\Api;
+ 
+if (isset($_GET['zd_echo'])) {
+    exit($_GET['zd_echo']);
+}
+ 
+require_once __DIR__ . '/../vendor/autoload.php';
+ 
+$key = 'd1c5238d767471ddb64b';
+$secret = '1df82d4b3aa1960110a5';
+ 
+$api = new Api($key, $secret);
+$pbxInternal = $api->getPbxInternal();
+//your code to save $pbxInternal->numbers
+var_dump($pbxInternal);
+$balance = $api->getBalance();
+
+echo "Despues de balance"; 
+var_dump($pbxInternal);
+?> 
+
+
 
 <!DOCTYPE html>
 <html lang="es">
