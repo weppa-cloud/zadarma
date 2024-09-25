@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     zip \
+    libzip-dev \
+    && docker-php-ext-configure zip \
     && docker-php-ext-install mysqli pdo pdo_mysql zip
 
 # Copia los archivos de la aplicación al directorio web de Apache
