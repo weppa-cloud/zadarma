@@ -10,7 +10,7 @@ if (isset($_GET['zd_echo'])) {
     exit($_GET['zd_echo']);
 }
  
-require_once __DIR__ . '/../vendor/autoload.php';
+// require_once __DIR__ . '/../vendor/autoload.php';
  
 $key = 'd1c5238d767471ddb64b';
 $secret = '1df82d4b3aa1960110a5';
