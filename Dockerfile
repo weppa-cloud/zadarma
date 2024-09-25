@@ -4,16 +4,20 @@ FROM php:8.0-apache
 # Instala Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Instala las extensiones y herramientas necesarias para Composer
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    zip \
+    && docker-php-ext-install mysqli pdo pdo_mysql zip
+
 # Copia los archivos de la aplicación al directorio web de Apache
 COPY . /var/www/html/
-
-# Instala las extensiones PHP necesarias
-RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Establece el directorio de trabajo para Composer
 WORKDIR /var/www/html
 
-# Corre composer install para instalar dependencias
+# Ejecuta composer install para instalar dependencias
 RUN composer install
 
 # Cambia los permisos de la carpeta
