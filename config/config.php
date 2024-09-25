@@ -2,6 +2,6 @@
 // config/config.php
 
 return [
-    'api_key' => 'c69ec05795c4e3a004ae',
-    'api_secret' => '88f8485fb929f1191459',
+    'api_key' => 'd1c5238d767471ddb64b',
+    'api_secret' => '1df82d4b3aa1960110a5',
 ];
