@@ -21,15 +21,15 @@ $secret = '1df82d4b3aa1960110a5';
 $api = new Api($key, $secret);
 $pbxInternal = $api->getPbxInternal();
 //your code to save $pbxInternal->numbers
-var_dump($pbxInternal);
-// $balance = $api->getBalance();
+// var_dump($pbxInternal);
+$balance = $api->getBalance();
 
 // echo "Despues de balance"; 
 // var_dump($pbxInternal);
 
 $login = '89075';
 
-echo "Sigue el webRtcKey ";
+// echo "Sigue el webRtcKey ";
 $webrtcKey = $api->getWebrtcKey($login)->key;
 // var_dump($webrtcKey)
 ?> 
@@ -69,7 +69,8 @@ $webrtcKey = $api->getWebrtcKey($login)->key;
                     'square', /*square|rounded*/
                     'es', /*ru, en, es, fr, de, pl, ua*/
                     true, 
-                    {right:'10px',bottom:'5px'}
+                    {right:'10px',bottom:'5px'},
+                    '3104712599'
                 );
             });
         }
