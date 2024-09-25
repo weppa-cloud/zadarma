@@ -22,16 +22,16 @@ $api = new Api($key, $secret);
 $pbxInternal = $api->getPbxInternal();
 //your code to save $pbxInternal->numbers
 var_dump($pbxInternal);
-$balance = $api->getBalance();
+// $balance = $api->getBalance();
 
-echo "Despues de balance"; 
-var_dump($pbxInternal);
+// echo "Despues de balance"; 
+// var_dump($pbxInternal);
 
 $login = '89075';
 
 echo "Sigue el webRtcKey ";
 $webrtcKey = $api->getWebrtcKey($login)->key;
-var_dump($webrtcKey)
+// var_dump($webrtcKey)
 ?> 
 
 
