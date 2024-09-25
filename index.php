@@ -27,7 +27,7 @@ $balance = $api->getBalance();
 echo "Despues de balance"; 
 var_dump($pbxInternal);
 
-$login = '89075';
+$login = '112571-100';
 
 echo "Sigue el webRtcKey ";
 $webrtcKey = $api->getWebrtcKey($login)->key;
@@ -52,7 +52,7 @@ $webrtcKey = $api->getWebrtcKey($login)->key;
             window.addEventListener('load', function() {
                 zadarmaWidgetFn(
                     'd1c5238d767471ddb64b', 
-                    '89075', 
+                    '112571-100', 
                     'square', /*square|rounded*/ 
                     'es', /*ru, en, es, fr, de, pl, ua*/
                     true, 
@@ -63,7 +63,7 @@ $webrtcKey = $api->getWebrtcKey($login)->key;
             window.attachEvent('onload', function(){
                 zadarmaWidgetFn(
                     'd1c5238d767471ddb64b', 
-                    '89075', 
+                    '112571-100', 
                     'square', /*square|rounded*/
                     'es', /*ru, en, es, fr, de, pl, ua*/
                     true, 
